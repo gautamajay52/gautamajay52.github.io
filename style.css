@@ -1,0 +1,300 @@
+/* @import url('https://fonts.googleapis.com/css?family=Wendy%20One'); */
+
+:root {
+    /* --bg1: linear-gradient(-225deg, #f49025da 10%, #ffffff 50%, #52f440de 100%); */
+    --text-color: #000000;
+    --shadow-color: #376f8b;
+    --image-border-color: black;
+    --bg1: linear-gradient(-225deg, rgb(0, 0, 0) 10%, rgb(30, 25, 25) 50%, rgb(0, 0, 0) 100%);
+    --bg2: linear-gradient(-225deg, #f5942d 10%, #ffffff 50%, #3ff42b 100%);
+    --border-color: rgb(255, 255, 255);
+}
+
+.light-mode {
+    --bg1: linear-gradient(-225deg, #c28f58 10%, #ffffff 50%, #71c268 100%);
+    --bg2: linear-gradient(-225deg, #f983068f 10%, #ffffff 50%, #21f40985 100%);
+    --border-color: #4b4949;
+    --image-border-color: black
+}
+
+@font-face {
+    font-family: 'Wendy One';
+    font-style: normal;
+    font-weight: normal;
+    src: url('WendyOne-Regular.woff') format('woff');
+}
+
+html,
+body {
+    width: 100%;
+    background-image: var(--bg1);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    flex-direction: column;
+    display: flex;
+    overflow: hidden;
+}
+
+.mycard {
+    height: 500px;
+    width: 70vw;
+    max-width: 400px;
+    background-image: var(--bg2);
+    background-size: cover;
+    background-repeat: no-repeat;
+    border: 1px var(--border-color);
+    box-shadow: 0 0 10px var(--border-color);
+    text-align: center;
+    position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    border-radius: 9px;
+}
+
+.profile {
+    text-align: center;
+}
+
+img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    ;
+    border: 3px solid var(--image-border-color);
+    box-shadow: 0 0 16px var(--image-border-color);
+    /* outline: 3px solid black; */
+    object-fit: cover;
+    /* display: inline-block; */
+    /* margin-top: 9%; */
+}
+
+img:hover {
+    border: 3px solid #ffffff;
+    box-shadow: 0 0 16px #ffffff;
+    cursor: pointer;
+}
+
+.name {
+    text-decoration: underline solid var(--text-color) 5px;
+    font-size: 30px;
+    /* max-font-size: 20px; */
+    font-family: "Wendy One", sans-serif;
+    color: var(--text-color);
+    font-weight: bolder;
+    text-shadow: 0 -3px 7px rgba(12, 2, 2, 0.4),
+        0 0px 1px rgb(221, 214, 214);
+    margin-top: -8px;
+}
+
+.name:hover {
+    /* animation: glitch .5s linear infinite; */
+    cursor: pointer;
+}
+
+@keyframes glitch {
+    0% {
+        transform: translate(0);
+    }
+
+    20% {
+        transform: translate(-1px, 1px);
+    }
+
+    40% {
+        transform: translate(1px, -1px);
+    }
+
+    /* 60% {
+        transform: translate(1px, 1px);
+    } */
+
+    80% {
+        transform: translate(1px, -1px);
+    }
+
+    100% {
+        transform: translate(0);
+    }
+}
+
+.small {
+    font-size: 0.7em;
+    font-weight: bold;
+}
+
+.status {
+    text-align: center;
+    display: inline-block;
+    font-size: 15px;
+    margin-bottom: 40px;
+    /* font-family: 'serif'; */
+    font-weight: bold;
+    color: #376f8b;
+    text-shadow: 0 0 5px #376f8b;
+}
+
+.status div {
+    overflow: hidden;
+    border-right: .15em solid rgb(238, 236, 234);
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: 0em;
+    animation:
+        typing 2.5s steps(40),
+        blink .5s step-end infinite alternate;
+}
+
+*,
+::after,
+::before {
+    box-sizing: content-box;
+}
+
+.socialIcons {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    /* margin-top: 5%; */
+}
+
+.useless p {
+    color: #71717a;
+    text-decoration: none;
+    font-family: sans-serif;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    width: 100%;
+    font-size: 8px;
+}
+
+
+.socialIcons ul {
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.socialIcons li {
+    background-color: yellow;
+    list-style: none;
+    display: inline-block;
+    margin: 4px;
+    border-radius: 5em;
+    overflow: hidden;
+}
+
+.socialIcons li a {
+    display: block;
+    padding: 0.5em;
+    min-width: 1.28571429em;
+    max-width: 1.28571429em;
+    height: 1.28571429em;
+    white-space: nowrap;
+    line-height: 1.5em;
+    /*it's working only when you write text with icon*/
+    transition: 0.5s;
+    text-decoration: none;
+    font-family: arial;
+    color: #fff;
+}
+
+.socialIcons li i {
+    margin-right: 0.5em;
+}
+
+.socialIcons li:hover a {
+    max-width: 200px;
+    padding-right: 1em;
+    /* animation: glitch .5s linear infinite; */
+}
+
+.socialIcons .twitter {
+    background-color: #00aced;
+    box-shadow: 0 0 16px #00aced;
+}
+
+.socialIcons .github {
+    background-color: #070404;
+    box-shadow: 0 0 16px #0a0808;
+}
+
+.socialIcons .telegram {
+    background-color: #0088cc;
+    box-shadow: 0 0 16px #0088cc;
+}
+
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+
+@keyframes blink {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: #376f8b;
+    }
+}
+
+.dark-mode-toggle {
+    outline: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1000;
+    transition: background-color 0.3s, transform 0.2s;
+    color: #fff;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+
+.dark-mode-toggle:hover {
+    transform: translateY(-2px);
+}
+
+.dark-mode-toggle:active {
+    transform: translateY(0);
+}
+
+.dark-mode-toggle:focus {
+    outline: none;
+}
+
+#particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url("");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
+}
